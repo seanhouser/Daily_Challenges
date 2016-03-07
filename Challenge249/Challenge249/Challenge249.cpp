@@ -3,9 +3,10 @@
 
 #include "stdafx.h"
 
-
 int _tmain(int argc, _TCHAR* argv[])
 {
+	//use stack, array, vector, queue?
+
 	return 0;
 }
 
