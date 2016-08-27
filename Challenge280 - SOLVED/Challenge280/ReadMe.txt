@@ -1,40 +1,25 @@
-========================================================================
-    CONSOLE APPLICATION : Challenge280 Project Overview
-========================================================================
+Oh, how cursed we are to have but 10 digits upon our fingers. Imagine the possibilities were we able to count to numbers beyond! But halt! With 10 digits upon our two appendages, 1024 unique combinations appear! But alas, counting in this manner is cumbersome, and counting to such a number beyond reason. Surely being able to count up to 100 would suffice!
 
-AppWizard has created this Challenge280 application for you.
+You will be given inputs which correspond to the 10 digits of a pair of hands in the following format, where 1 means the finger is raised, and 0 means the finger is down.
 
-This file contains a summary of what you will find in each of the files that
-make up your Challenge280 application.
+Example:
+LP 	LR 	LM 	LI 	LT 	RT 	RI 	RM 	RR 	RP
+0 	1 	1 	1 	0 	1 	1 	1 	0 	0
 
+L = Left, R = Right, P = Pinky, R = Ring Finger, M = Middle Finger, I = Index Finger, T = Thumb
 
-Challenge280.vcxproj
-    This is the main project file for VC++ projects generated using an Application Wizard.
-    It contains information about the version of Visual C++ that generated the file, and
-    information about the platforms, configurations, and project features selected with the
-    Application Wizard.
+Your challenge is to take these inputs, and:
 
-Challenge280.vcxproj.filters
-    This is the filters file for VC++ projects generated using an Application Wizard. 
-    It contains information about the association between the files in your project 
-    and the filters. This association is used in the IDE to show grouping of files with
-    similar extensions under a specific node (for e.g. ".cpp" files are associated with the
-    "Source Files" filter).
+    Determine if it is valid based on this counting scheme(http://www.wikihow.com/Count-to-99-on-Your-Fingers)
 
-Challenge280.cpp
-    This is the main application source file.
+    .
 
-/////////////////////////////////////////////////////////////////////////////
-Other standard files:
+    If it is, then decode the inputs into the number represented by the digits on the hand.
 
-StdAfx.h, StdAfx.cpp
-    These files are used to build a precompiled header (PCH) file
-    named Challenge280.pch and a precompiled types file named StdAfx.obj.
+Formal Inputs and Outputs
 
-/////////////////////////////////////////////////////////////////////////////
-Other notes:
-
-AppWizard uses "TODO:" comments to indicate parts of the source code you
-should add to or customize.
-
-/////////////////////////////////////////////////////////////////////////////
+0111011100 -> 37
+1010010000 -> Invalid
+0011101110 -> 73
+0000110000 -> 55
+1111110001 -> Invalid
