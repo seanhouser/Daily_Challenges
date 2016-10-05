@@ -4,32 +4,31 @@
 #include "stdafx.h"
 #include <iostream>
 
-void rev_factorial(float, float);
+float rev_factorial(float, float);
 
 float _tmain(float argc, _TCHAR* argv[])
 {
-	float number;
+	float number, answer;
 	std::cout << "Press Ctrl+C to exit\nPlease enter the number you'd like to find the factorial of" << std::endl;
 	while (1) {
 	std::cin >> number;
-	rev_factorial(number, 2);
+	answer = rev_factorial(number, 2);
+	if (answer == -99)
+		std::cout << "NONE" << std::endl;
+	else
+		std::cout << "Factorial is " << answer << '!' << std::endl;
 	}
 	return 0;
 }
 
-void rev_factorial(float number, float factorial) {
-	if (number < 1) {
-		std::cout << "NONE" << std::endl;
-		return;
-	}
-	if (number == 1) {
-		factorial--;
-		std::cout << "The factorial is: " << factorial << std::endl;
-		return;
-	}
+float rev_factorial(float number, float factorial) {
+	if (number < 1)
+		return -99;
+	if (number == 1)
+		return --factorial;
 	else {
 		number = number/factorial;
 		factorial++;
-		rev_factorial(number, factorial);
+		return rev_factorial(number, factorial);
 	}
 }

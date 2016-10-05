@@ -1,39 +1,33 @@
-// nonsense.cpp : Defines the entry point for the console application.
-//
+//C++ PROGRAM FOR DINKING AROUND
 
 #include "stdafx.h"
 #include <iostream>
 
-const int STOP = 101;
-const int EXCLUDE = 1;
+float rev_factorial(float, float);
 
-int _tmain(int argc, _TCHAR* argv[])
+float _tmain(float argc, _TCHAR* argv[])
 {
-    for (int i=0; i<=10; i++) {
-        for (int j=0; j<=9; j++) {
-            if ((10*i)+j > STOP)
-                return 0;
-			if ((10*i)+j != EXCLUDE) {
-				if (i>0)
-					std::cout << i;
-				std:: cout << j;
-				switch (j) {
-				case 1:
-					std::cout << "st, ";
-					break;
-				case 2:
-					std::cout << "nd, ";
-					break;
-				case 3:
-					std::cout << "rd, ";
-					break;
-				default:
-					std:: cout << "th, ";
-					break;
-				}
-			}
-        }
-    }
-    return 0;
+	float number, answer;
+	std::cout << "Press Ctrl+C to exit\nPlease enter the number you'd like to find the factorial of" << std::endl;
+	while (1) {
+	std::cin >> number;
+	answer = rev_factorial(number, 2);
+	if (answer == -99)
+		std::cout << "NONE" << std::endl;
+	else
+		std::cout << "Factorial is " << answer << '!' << std::endl;
+	}
+	return 0;
 }
 
+float rev_factorial(float number, float factorial) {
+	if (number < 1)
+		return -99;
+	if (number == 1)
+		return --factorial;
+	else {
+		number = number/factorial;
+		factorial++;
+		return rev_factorial(number, factorial);
+	}
+}
