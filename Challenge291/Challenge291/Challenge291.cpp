@@ -6,7 +6,13 @@
 #include <vector>
 #include <fstream>
 
-int popFront(std::vector<int>);
+int popFront(std::vector<int> & food_info)
+{
+	int temp;
+	temp = *food_info.begin();
+	food_info.erase(food_info.begin());
+	return temp;
+}
 
 int _tmain(int argc, _TCHAR* argv[])
 {
@@ -20,17 +26,22 @@ int _tmain(int argc, _TCHAR* argv[])
 		input >> s;
 		food_info.push_back(s);
 	}
-	popFront(food_info);
+	g_weight = popFront(food_info);
+	g_temp = popFront(food_info);
+	int i;
+	while (!food_info.empty()) {
+		i = popFront(food_info);
+		std:: cout << i << std::endl;
+	}
+	/*for (int i=0; !food_info.empty(); ++i) {
+		int weight, temp;
+		weight = popFront(food_info);
+		temp = popFront(food_info);
+		if (weight >= g_weight && temp <= g_temp)
+			std::cout << i;
+	}*/
 
 	input.close();
 	return 0;
-}
-
-int popFront(std::vector<int> & food_info)
-{
-	int temp;
-	temp = *food_info.begin();
-	food_info.erase(food_info.begin());
-	return temp;
 }
 
