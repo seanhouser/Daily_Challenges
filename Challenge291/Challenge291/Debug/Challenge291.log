@@ -1,0 +1,11 @@
+﻿Build started 11/14/2016 4:33:01 PM.
+     1>Project "E:\Sean\Documents\GitHub\Reddit-Daily-Challenges\Challenge291\Challenge291\Challenge291.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         E:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\Challenge291.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Challenge291.cpp
+         Challenge291.cpp
+     1>e:\sean\documents\github\reddit-daily-challenges\challenge291\challenge291\challenge291.cpp(21): error C3861: 'popFront': identifier not found
+     1>Done Building Project "E:\Sean\Documents\GitHub\Reddit-Daily-Challenges\Challenge291\Challenge291\Challenge291.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.46
