@@ -2,8 +2,3 @@ white
 red
 green
 white
-
-white
-orange
-green
-white
