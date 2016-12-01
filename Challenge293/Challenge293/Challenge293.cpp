@@ -1,13 +1,10 @@
-// Challenge293.cpp : Defines the entry point for the console application.
-//
-
 #include "stdafx.h"
 #include <fstream>
 #include <sstream>
 #include <iostream>
 #include <vector>
 
-enum Color{white, black, purple, red, green, orange, SUCCESS};
+enum Color{white, black, purple, red, green, orange};
 std::vector <std::string> defusal;
 
 Color set_step(std::string color) {
@@ -19,10 +16,10 @@ Color set_step(std::string color) {
 		return purple;
 	else if (color == "red")
 		return red;
+		else if (color == "green")
+		return green;
 	else if (color == "orange")
 		return orange;
-	else
-		return SUCCESS;
 }
 
 int _tmain(int argc, _TCHAR* argv[])
@@ -33,7 +30,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	while (getline(input, s))
 		defusal.push_back(s);
 
-	for (int i=0; i<defusal.size(); ++i) {
+	for (int i=0; i<defusal.size()-1; ++i) {
 		Color step, nextStep;
 		step = set_step(defusal[i]);
 		nextStep = set_step(defusal[i+1]);
@@ -44,16 +41,40 @@ int _tmain(int argc, _TCHAR* argv[])
 				std::cout << "BOOM\n";
 				return 0;
 			}
+			break;
 		case black:
+			if (nextStep == white || nextStep == green || nextStep == orange) {
+				std::cout << "BOOM\n";
+				return 0;
+			}
+			break;
 		case purple:
+			if (nextStep == purple || nextStep == green || nextStep == orange || nextStep == white) {
+				std::cout << "BOOM\n";
+				return 0;
+			}
+			break;
 		case red:
+			if (nextStep != green) {
+				std::cout << "BOOM\n";
+				return 0;
+			}
+			break;
 		case green:
+			if (nextStep != orange && nextStep != white) {
+				std::cout << "BOOM\n";
+				return 0;
+			}
+			break;
 		case orange:
-		case SUCCESS:
-			std::cout << "Successfully defused\n";
+			if (nextStep != red && nextStep != black) {
+				std::cout << "BOOM\n";
+				return 0;
+			}
+			break;
 		}
 	}
-
+	std::cout << "Succussfully defused!" << std::endl;
 	return 0;
 }
 
