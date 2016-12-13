@@ -3,23 +3,33 @@
 #include <iostream>
 #include <vector>
 
+void printWord(int i, std::vector<char> & data) {
+	for (int j=0; j<data.size()/2; ++j) {
+		if (j+1 <= i)
+			std::cout << data[j+(data.size()/2+1)];
+		else
+			std::cout << data[j];
+	}
+}
+
 int _tmain(int argc, _TCHAR* argv[])
 {
-	std::ifstream input("input.txt");
 	std::vector<char> data;
+	std::ifstream input("input.txt");
 	char s;
 
 	while (input >> std::noskipws >> s)
 		data.push_back(s);
 
 	for (int i=0; i<data.size()/2+1; ++i) {
-		for (int j=0; j<(data.size()/2); ++j) {
-				if (j+1 <= i)
-					std::cout << data[j+(data.size()/2+1)];
-				else 
-					std::cout << data[j];
+		if (i == data.size()/2) {
+			printWord(i, data);
+			std::cout << '\n';
 		}
-		std::cout << '\n';
+		else if (data[i] != data[i+data.size()/2+1]) {
+			printWord(i, data);
+			std::cout << '\n';
+		}
 	}
 	return 0;
 }
