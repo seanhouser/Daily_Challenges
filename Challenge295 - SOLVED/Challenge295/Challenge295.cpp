@@ -10,6 +10,7 @@ void printWord(int i, std::vector<char> & data) {
 		else
 			std::cout << data[j];
 	}
+	std::cout << '\n';
 }
 
 int _tmain(int argc, _TCHAR* argv[])
@@ -22,14 +23,10 @@ int _tmain(int argc, _TCHAR* argv[])
 		data.push_back(s);
 
 	for (int i=0; i<data.size()/2+1; ++i) {
-		if (i == data.size()/2) {
+		if (i == data.size()/2)
 			printWord(i, data);
-			std::cout << '\n';
-		}
-		else if (data[i] != data[i+data.size()/2+1]) {
+		else if (data[i] != data[i+data.size()/2+1])
 			printWord(i, data);
-			std::cout << '\n';
-		}
 	}
 	return 0;
 }
