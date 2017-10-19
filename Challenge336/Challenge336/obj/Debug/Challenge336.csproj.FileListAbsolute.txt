@@ -1,0 +1,6 @@
+E:\Sean\Documents\GitHub\Reddit-Daily-Challenges\Challenge336\Challenge336\bin\Debug\Challenge336.exe.config
+E:\Sean\Documents\GitHub\Reddit-Daily-Challenges\Challenge336\Challenge336\bin\Debug\Challenge336.exe
+E:\Sean\Documents\GitHub\Reddit-Daily-Challenges\Challenge336\Challenge336\bin\Debug\Challenge336.pdb
+E:\Sean\Documents\GitHub\Reddit-Daily-Challenges\Challenge336\Challenge336\obj\Debug\Challenge336.csprojResolveAssemblyReference.cache
+E:\Sean\Documents\GitHub\Reddit-Daily-Challenges\Challenge336\Challenge336\obj\Debug\Challenge336.exe
+E:\Sean\Documents\GitHub\Reddit-Daily-Challenges\Challenge336\Challenge336\obj\Debug\Challenge336.pdb
